@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <style>
+        body {
+            background-image: url('images/fondo1.png');
+            background-size: cover;
+            display: flex;
+            height: 100vh;
+            margin: 0;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .box {
+            background-color: rgba(31, 24, 24, 0.85);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            padding: 2rem;
+            width: 100%;
+            max-width: 1200px;
+            text-align: center;
+        }
+        #pokemon {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .pokemon-item {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 1rem;
+            width: calc(33.33% - 2rem);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            color: white;
+        }
+        .pokemon-item img {
+            width: 80px;
+            height: 80px;
+        }
+        .hidden {
+            display: none;
+        }
+        .error {
+            color: red;
+            text-align: center;
+            margin: 20px;
+        }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1 class="title has-text-white">Pokemon</h1>
+        <div class="field">
+            <div class="control">
+                <input class="input" type="text" id="buscar" placeholder="Buscar Pokémon">
+            </div>
+        </div>
+        <div class="buttons">
+            <button class="button is-info" id="boton-buscar-por-nombre">Buscar por Nombre</button>
+            <button class="button is-info" id="boton-buscar-por-id">Buscar por ID</button>
+            <button class="button is-info" id="boton-buscar-por-tipo">Buscar por Tipo</button>
+            <button class="button is-info" id="boton-buscar-por-habilidad">Buscar por Habilidad</button>
+            <button class="button is-info" id="boton-aleatorio">Pokémon Aleatorio</button>
+            <button class="button is-danger" id="boton-limpiar">Limpiar</button>
+        </div>
+        <div id="pokemon"></div>
+        <div id="paginacion" class="pagination hidden ">
+            <button class="button is-link" id="pagina-anterior" disabled>Anterior</button>
+            <span id="info-pagina" class="button is-static">Página 1</span>
+            <button class="button is-link" id="pagina-siguiente" disabled>Siguiente</button>
+        </div>
+        <div id="mensaje-error" class="error hidden"></div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
